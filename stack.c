@@ -1,9 +1,10 @@
 #include<stdio.h>
-
+#include<stdbool.h>
 /*** Function Declarations ***/
 void push();
 void pop();
 void display();
+bool isEmpty();
 int top, arr[50], numberOfElements;
 
 int main(){
@@ -52,11 +53,19 @@ void push(){
 }
 
 void pop(){
-    if(top < 0){
+    if(isEmpty()){
         printf("There are no elements in the stack\n");
     }else{
         printf("The popped element is %d\n", arr[top]);
         top--;
+    }
+}
+
+bool isEmpty(){
+    if(top < 0){
+        return true;
+    }else{
+        return false;
     }
 }
 
